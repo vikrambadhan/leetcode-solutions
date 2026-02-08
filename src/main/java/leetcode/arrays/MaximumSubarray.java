@@ -1,0 +1,18 @@
+package main.java.leetcode.arrays;
+
+public class MaximumSubarray {
+    public int maxSubArray(int[] nums) {
+        int maxSum = Integer.MIN_VALUE;
+        int sum =0;
+
+        for(int i = 0; i< nums.length; i++){
+            sum = sum + nums[i];
+            maxSum = Math.max(sum, maxSum);
+
+            if(sum <0){
+                sum =0;
+            }
+        }
+        return maxSum;
+    }
+}
