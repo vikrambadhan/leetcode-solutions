@@ -48,4 +48,31 @@ public class PalindromeLL {
         }
         return true;
     }
+
+    // using two pointers
+    public boolean isPalindrome2(ListNode head) {
+        // find middle
+        ListNode slow = head, fast = head;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast = fast.next;
+        }
+        // rev second half
+        ListNode prev = null, curr = slow;
+
+        while(curr != null){
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        //compare the two
+        while(prev != null){
+            if(prev.val != head.val) return false;
+            prev = prev.next;
+            head = head.next;
+        }
+        return true;
+    }
 }
