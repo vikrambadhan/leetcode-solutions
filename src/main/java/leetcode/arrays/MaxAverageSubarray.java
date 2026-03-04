@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package main.java.leetcode.arrays;
 
 public class MaxAverageSubarray {
     public double findMaxAverage(int[] nums, int k) {
